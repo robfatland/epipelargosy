@@ -12,59 +12,25 @@ parts:
     - title: About Use Case Library
       file: chapters/about
 
-- caption: Chapter One
+- caption: Tutorial
   chapters:
     - file: chapters/motivation
-
-- caption: Chapter Two
-  chapters:
     - file: chapters/methods
-
-- caption: Chapter Three
-  chapters:
     - file: chapters/data
-
-- caption: Chapter Four
-  chapters:
     - file: chapters/development
-
-- caption: Chapter Five
-  chapters:
     - file: chapters/training
-
-- caption: Chapter Six
-  chapters:
     - file: chapters/evaluation
-
-- caption: Chapter Seven
-  chapters:
     - file: chapters/workflow
-
-- caption: Chapter Eight
-  chapters:
     - file: chapters/reproducibility
-
-- caption: Chapter Nine
-  chapters:
     - file: chapters/conclusion
-
-- caption: Chapter Ten (optional)
-  chapters:
     - file: chapters/todo
-
-- caption: Chapter Eleven (optional)
-  chapters:
     - file: chapters/questions
-
-- caption: Chapter Twelve (optional)
-  chapters:
     - file: chapters/troubleshooting
 
-- caption: Chapter Thirteen
+- caption: Example Notebook
   chapters:
     - file: chapters/example
 
-- caption: Reference
+- caption: References
   chapters:
     - file: reference/glossary
-    - file: reference/bibliography
