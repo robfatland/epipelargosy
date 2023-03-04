@@ -6,4 +6,11 @@
 [![GeoSMART Use Case](./book/img/use_case_badge.svg)](https://geo-smart.github.io/usecases)
 
 This repository stores a skeleton of a GeoSMART use case book.<br>
-Click "use as template" to get started.
+
+1. Click "Use This Template" and name your repository
+
+2. In your repository edit book/_config.yml
+
+3. Under your repository Settings --> Pages --> Source = GitHub Actions
+
+3. Edit environment.yml, modify notebooks, and your JupyterBook will be published for you! 
