@@ -20,11 +20,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # Build JupyterBook Website
+  build:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -41,14 +38,24 @@ jobs:
       - name: Build the Book
         run: jb build book
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload only HTML folder
-          path: 'book/_build/html'
+          path: book/_build/html
+
+
+  # Publish Website to GitHub Pages if built successfully
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
 
       - name: Deploy to GitHub Pages
         id: deployment

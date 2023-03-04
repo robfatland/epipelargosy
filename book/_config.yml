@@ -12,6 +12,11 @@ repository:
   path_to_book: book  # Optional path to your book, relative to the repository root
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: 'force'
+
 html:
   use_edit_page_button: true
   use_issues_button: true
