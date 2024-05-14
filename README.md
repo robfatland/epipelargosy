@@ -30,11 +30,19 @@ In the `book` directory, update the `_config.yml` file with some basic informati
 - repository url
 You can leave all the other configuration options unchanged for now.
 
-### Set up action to build the JupyterBook
+### Setup GitHub Action to build the JupyterBook
 
 In your repository *Settings* (gear icon on top of your repository's page), go to the *Pages* section
 Under the *Build and deployment* settings, click on the dropdown menu below *Source* and select *GitHub Actions*
 
+Your JupyterBook is now configured to build and deploy following each new commit you make to the repository. Note: The file that runs the build and deploy action is located at `/.github/workflows/publish.yml` but **you do not need to make any changes to this file**.
+
 ### Add your use case content
 
-Edit environment.yml, modify notebooks, and your JupyterBook will be published for you! 
+Now that you have completed the creation, configuration, and setup steps, you can begin adding your use case content to the JupyterBook. 
+
+We recommend that you refer to the JupyterBook documentation on the following topics:
+* [Structure](https://jupyterbook.org/en/stable/structure/toc.html) and [Configure](https://jupyterbook.org/en/stable/structure/configure.html) the table of contents (`book/_toc.yml`)
+* [Markdown](https://jupyterbook.org/en/stable/file-types/markdown.html) and [Jupyter Notebook](https://jupyterbook.org/en/stable/file-types/notebooks.html) files for the content
+* Embeding [images and figures](https://jupyterbook.org/en/stable/content/figures.html), [math and equations](https://jupyterbook.org/en/stable/content/math.html)
+* [Links and references](https://jupyterbook.org/en/stable/content/references.html), [special content blocks](https://jupyterbook.org/en/stable/content/content-blocks.html), and more ways to [structure chunks of content](https://jupyterbook.org/en/stable/content/components.html)
