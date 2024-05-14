@@ -25,9 +25,10 @@ This repository stores a skeleton of a GeoSMART use case book.<br>
 With your new use case repository, you can choose to clone the repository to work on your local system, or edit configuration files within the web browser.
 
 In the `book` directory, update the `_config.yml` file with some basic information:
-- title
-- author
-- repository url
+- `title: `
+- `author: `
+- `repository:` `url: `
+
 You can leave all the other configuration options unchanged for now.
 
 ### Setup GitHub Action to build the JupyterBook
