@@ -42,9 +42,10 @@ Your JupyterBook is now configured to build and deploy following each new commit
 
 Now that you have completed the creation, configuration, and setup steps, you can begin adding your use case content to the JupyterBook. 
 
-* `book/intro.md` is where you can write content for your Jupyter Book's home page
-* `book/chapters/` is where you will upload markdown or Jupyter Notebook files
-    * This template contains placeholder Jupyter Notebook files as a recommended way to organize your content. You can edit these files to add your content, or remove and replace with your own files. Be sure to update the table of contents file (`/book/_toc.yml` to reflect any changes you make to the Jupyter Book content.
+* update the `environment.yml` file to include any packages that your use case code will require
+* `book/intro.md` is where you can add content for your Jupyter Book's home page
+* `book/chapters/` will contain markdown or Jupyter Notebook files, the main content of your use case Jupyter Book
+    * This template contains placeholder Jupyter Notebook files to illustrate a recommended way to organize your content. You can edit each of these files to add your content following the suggested organization, or remove and replace the placeholder files with your own content. Be sure to update the table of contents file (`/book/_toc.yml`) to reflect any changes you make to the Jupyter Book content.
 
 We recommend that you refer to the JupyterBook documentation on the following topics to help your organize your content:
 * [Structure](https://jupyterbook.org/en/stable/structure/toc.html) and [Configure](https://jupyterbook.org/en/stable/structure/configure.html) the table of contents, `book/_toc.yml`
