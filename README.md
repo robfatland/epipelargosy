@@ -13,7 +13,7 @@ This repository stores a skeleton of a GeoSMART use case book.<br>
 1. On the top right of the page, click *Use this template* and then *Create a new repository*
 2. This should take you to a new page titled *Create a new repository*
 3. Double check that the dropdown menu below *Repository template* says either *geo-smart/simple-template* or *geo-smart/use_case_template*
-4. Leave the box *unchecked** for *Include all branches*
+4. Leave the box **unchecked** for *Include all branches*
 5. For *Owner* select your github user account, or another organization to create the new repository under
 6. Give your use case repository a name under *Repository name*
 7. Add a short *Description*
