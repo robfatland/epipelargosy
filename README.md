@@ -51,7 +51,10 @@ Now that you have completed the creation, configuration, and setup steps, you ca
 * `book/intro.md` is where you can add content for your Jupyter Book's home page
 * `book/chapters/` will contain markdown or Jupyter Notebook files, the main content of your use case Jupyter Book
     * This template contains placeholder Jupyter Notebook files to illustrate a recommended way to organize your content. You can edit each of these files to add your content following the suggested organization, or remove and replace the placeholder files with your own content.
-    * Update the table of contents file (`/book/_toc.yml`) to organize page navigation through the website
+* Update the table of contents file (`/book/_toc.yml`) to organize page navigation through the website
+  * Jupyter Books organize content by *Parts*, and within each part are *Chapters*. A chapter consists of a single Jupyter Notebook or markdown file.
+  * You create and title parts in the table of contents file with `- caption: Part Title`
+  * Under each part you can list one or more chapters using `- file: chapters/my_file` which points to either `my_file.ipynb` or `my_file.md`
 
 We recommend that you refer to the JupyterBook documentation on the following topics to help your organize your content:
 * [Structure](https://jupyterbook.org/en/stable/structure/toc.html) and [Configure](https://jupyterbook.org/en/stable/structure/configure.html) the table of contents, `book/_toc.yml`
