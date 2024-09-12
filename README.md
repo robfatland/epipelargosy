@@ -33,8 +33,9 @@ You can leave all the other configuration options unchanged for now.
 
 ### Setup GitHub Action to build the JupyterBook
 
-In your repository *Settings* (gear icon on top of your repository's page), go to the *Pages* section
-Under the *Build and deployment* settings, click on the dropdown menu below *Source* and select *GitHub Actions*
+In your repository *Settings* (gear icon on top of your repository's page), go to the *Pages* section.
+
+Under the *Build and deployment* settings, click on the dropdown menu below *Source* and select *GitHub Actions*.
 
 Your JupyterBook is now configured to build and deploy following each new commit you make to the repository. Note: The file that runs the build and deploy action is located at `/.github/workflows/publish.yml` but **you do not need to make any changes to this file**.
 
