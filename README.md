@@ -9,8 +9,6 @@
 
 This repository is a template for creating a GeoSMART use case book. These use the Jupyter Book format, documentation for which can be found [here](https://jupyterbook.org/en/stable/intro.html). Jupyter Book websites are built using Jupyter Notebook (`.ipynb`) and markdown (`.md`) files.
 
-<br>
-
 ### Create a new repository from this template
 1. On the top right of the page, click *Use this template* and then *Create a new repository*
 2. This should take you to a new page titled *Create a new repository*
@@ -55,6 +53,8 @@ Now that you have completed the creation, configuration, and setup steps, you ca
   * Jupyter Books organize content by *Parts*, and within each part are *Chapters*. A chapter consists of a single Jupyter Notebook or markdown file.
   * You create and title parts in the table of contents file with `- caption: Part Title`
   * Under each part you can list one or more chapters using `- file: chapters/my_file` which points to either `my_file.ipynb` or `my_file.md`
+
+## Other resources
 
 We recommend that you refer to the JupyterBook documentation on the following topics to help your organize your content:
 * [Structure](https://jupyterbook.org/en/stable/structure/toc.html) and [Configure](https://jupyterbook.org/en/stable/structure/configure.html) the table of contents, `book/_toc.yml`
