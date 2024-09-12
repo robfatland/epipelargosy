@@ -7,7 +7,9 @@
 
 ## How to use this template
 
-This repository stores a skeleton of a GeoSMART use case book.<br>
+This repository is a template for creating a GeoSMART use case book. These use the Jupyter Book format, documentation for which can be found [here](https://jupyterbook.org/en/stable/intro.html). Jupyter Book websites are built using Jupyter Notebook (`.ipynb`) and markdown (`.md`) files.
+
+<br>
 
 ### Create a new repository from this template
 1. On the top right of the page, click *Use this template* and then *Create a new repository*
@@ -39,14 +41,17 @@ Under the *Build and deployment* settings, click on the dropdown menu below *Sou
 
 Your JupyterBook is now configured to build and deploy following each new commit you make to the repository. Note: The file that runs the build and deploy action is located at `/.github/workflows/publish.yml` but **you do not need to make any changes to this file**.
 
+If a commit fails to produce a new version of the Book, go to the *Actions* tab on the GitHub repository page to read the action logs and diagnose errors (failed actions will have a red icon with an X next to them).
+
 ### Add your use case content
 
 Now that you have completed the creation, configuration, and setup steps, you can begin adding your use case content to the JupyterBook. 
 
-* update the `environment.yml` file to include any packages that your use case code will require
+* update the `environment.yml` file to include any packages that your use case code will require (the Jupyter Notebooks are executed with this environment each time the GitHub action that builds and deploys the website is ran).
 * `book/intro.md` is where you can add content for your Jupyter Book's home page
 * `book/chapters/` will contain markdown or Jupyter Notebook files, the main content of your use case Jupyter Book
-    * This template contains placeholder Jupyter Notebook files to illustrate a recommended way to organize your content. You can edit each of these files to add your content following the suggested organization, or remove and replace the placeholder files with your own content. Be sure to update the table of contents file (`/book/_toc.yml`) to reflect any changes you make to the Jupyter Book content.
+    * This template contains placeholder Jupyter Notebook files to illustrate a recommended way to organize your content. You can edit each of these files to add your content following the suggested organization, or remove and replace the placeholder files with your own content.
+    * Update the table of contents file (`/book/_toc.yml`) to organize page navigation through the website
 
 We recommend that you refer to the JupyterBook documentation on the following topics to help your organize your content:
 * [Structure](https://jupyterbook.org/en/stable/structure/toc.html) and [Configure](https://jupyterbook.org/en/stable/structure/configure.html) the table of contents, `book/_toc.yml`
