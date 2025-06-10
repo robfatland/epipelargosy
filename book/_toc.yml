@@ -10,27 +10,17 @@ parts:
     - title: Project Pythia Foundations
       url: https://foundations.projectpythia.org/landing-page.html
     - title: About Use Case Library
-      file: chapters/about
+      file: chapters/0_about
 
-- caption: Tutorial
+- caption: Chapters
   chapters:
-    - file: chapters/motivation
-    - file: chapters/methods
-    - file: chapters/data
-    - file: chapters/development
-    - file: chapters/training
-    - file: chapters/evaluation
-    - file: chapters/workflow
-    - file: chapters/reproducibility
-    - file: chapters/conclusion
-    - file: chapters/todo
-    - file: chapters/questions
-    - file: chapters/troubleshooting
-
-- caption: Example Notebook
-  chapters:
-    - file: chapters/example
+    - file: chapters/1_epipelargosy
+    - file: chapters/2_shallowprofiler
+    - file: chapters/A1_source_material
+    - file: chapters/A2_data
+    - file: chapters/A3_technical
 
 - caption: References
   chapters:
     - file: reference/glossary
+    - file: reference/bibliography
