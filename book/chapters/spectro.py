@@ -14,7 +14,6 @@ colorBA56 = 'red'
 colorOA28 = 'blue'
 colorOA56 = 'gold'
 
-
 colorBA00 = 'black'
 colorBA10 = 'red'
 colorBA20 = 'orange'

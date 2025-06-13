@@ -258,3 +258,12 @@ def ReformatSpkirData(ds, output_fnm_base):
 # ds.spkir412nm.plot()
 #
 ###############
+
+
+
+if __name__ == '__main__':
+    '''
+    The shallowprofiler module is code specific to the three shallow profilers associated with CEA + RCA.
+    This code tests the intrinsic functions etcetera.
+    '''
+    print(sensors[0])
