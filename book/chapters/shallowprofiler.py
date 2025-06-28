@@ -113,25 +113,104 @@ def GetSensorTuple(s, f):
     return (DA_sensor, DA_depth, range_lo, range_hi, sensor_color)
 
 
-#############################
+
+
+# A data dictionary called dd
+# dd = {}
+
+
+# A list of keys for sp sensors (excepting spectrophotometer)
+sp_sensorkeys = ['time',
+                 'conductivity', 'density', 'pressure', 'salinity', 'temoperature', 
+                 'chlora', 'backscatter', 'fdom', 
+                 'si412', 'si443', 'si490', 'si510', 'si555', 'si620', 'si683', 
+                 'nitrate', 'nitratedark', 
+                 'pco2', 'dissolvedoxygen', 'par', 'ph', 'east', 'north', 'up']
+
+# A dictionary of expected numerical data range tuples using sp_sensorkeys
+sp_data_ranges = {'time':(0., 1.),
+                  'conductivity':(3.2,3.7),
+                  'density':(1024, 1028),
+                  'pressure':(0.,200.),
+                  'salinity':(32, 34),
+                  'temperature':(7, 11),
+                  'chlora':(0.,1.5),
+                  'backscatter':(0.00,0.006),
+                  'fdom':(0.5,4.5),
+                  'si412':(0.0, 15.0),
+                  'si443':(0.0, 15.0),
+                  'si490':(0.0, 15.0),
+                  'si510':(0.0, 15.0),
+                  'si555':(0.0, 15.0),
+                  'si620':(0.0, 15.0),
+                  'si683':(0.0, 15.0),
+                  'nitrate':(0., 35.),
+                  'nitratedark':(0., 35.),
+                  'pco2':(200.0, 1200.0),
+                  'dissolvedoxygen':(50.0, 300.),
+                  'par':(0.0, 300.),
+                  'ph':(7.6, 8.2),
+                  'east':(-0.4, 0.4),
+                  'north':(-0.4, 0.4),
+                  'up':(-0.4, 0.4) }
+
+# sp_modes = {'conductivity':(('a','d','r'), (0,1,2,3,4,5,6,7,8))}
+# sp_standard_deviations = {'conductivity':(0.1, 0.6), etcetera
+# sp_colors = {conductivity':('xkcd:maroon','xkcd:light orange'),
+# sp_sensornames = {'conductivity':'Conductivity',
+
+# Notes on reformatting spectral irradiance (spkir) data by channel
+# From an un-differentiated spkir.nc source file we have Dataset ds.
+# This will be written as 7 sensor files where sensor name is spkir412nm etc.
+# Already using non-duplicated 'time'. Sensor names will have spkir pre-pended.
+# 
+# relative_path = 'rca/sensors/data/'
+# site          = 'osb'
+# instrument    = 'spkir'
+# sensor        = 'spkir'
+# spkir_months  = ['apr21', 'jul21', 'jan22']
+# for month in spkir_months:
+#     input_fnm       = relative_path + site + '_' + instrument + '_' + month + '_' + sensor + '.nc'
+#     output_fnm_base = relative_path + site + '_spkir_' + month + '_'
+#     ds = xr.open_dataset(input_fnm)
+#     ReformatSpkirData(ds, output_fnm_base)
+#
+# ds = xr.open_dataset('rca/sensors/data/osb_spkir_jan22_spkir412nm.nc')
+# ds.spkir412nm.plot()
+#
+
+
+
+
+
+
 #############################
 ####
 #### Shallow Profiler Sensor Data Dictionaries
 ####
 #############################
-#############################
 
-sensors = [
-['conductivity', 'ctd'], ['density', 'ctd'], ['pressure', 'ctd'], ['salinity', 'ctd'], ['temp', 'ctd'],
-['chlora', 'fluor'], ['backscatter', 'fluor'], ['fdom', 'fluor'],
-['spkir412nm', 'spkir'], ['spkir443nm', 'spkir'], ['spkir490nm', 'spkir'], ['spkir510nm', 'spkir'], ['spkir555nm', 'spkir'], ['spkir620nm', 'spkir'], ['spkir683nm', 'spkir'],
-['nitrate', 'nitrate'],
-['pco2', 'pco2'],
-['do', 'do'],
-['par', 'par'],
-['ph', 'ph'],
-['up', 'vel'], ['east', 'vel'], ['north', 'vel']]
 
+# Old version: A list of sub-lists: Each sublist has [0] sensor name string [1] instrument name string.
+# Deprecate this in favor of mapping sensors to instruments some less labored way.
+# Also this is not verified 1:1 with sp_sensorkeys
+# sensors = [
+# ['conductivity', 'ctd'], ['density', 'ctd'], ['pressure', 'ctd'], ['salinity', 'ctd'], 
+#   ['temperature', 'ctd'],
+# ['chlora', 'fluor'], ['backscatter', 'fluor'], ['fdom', 'fluor'],
+# ['spkir412nm', 'spkir'], ['spkir443nm', 'spkir'], ['spkir490nm', 'spkir'], 
+#   ['spkir510nm', 'spkir'], ['spkir555nm', 'spkir'], ['spkir620nm', 'spkir'], ['spkir683nm', 'spkir'],
+# ['nitrate', 'nitrate'],
+# ['nitratedark', 'nitrate'],
+# ['pco2', 'pco2'],
+# ['do', 'do'],
+# ['par', 'par'],
+# ['ph', 'ph'],
+# ['up', 'vel'], ['east', 'vel'], ['north', 'vel']]
+
+
+
+# Not verified against sp_sensorkeys
 ranges = {
 'conductivity':(3.2,3.7),'density':(1024, 1028),'pressure':(0.,200.),'salinity':(32, 34),'temp':(7, 11),
 'chlora':(0.,1.5),'backscatter':(0.00,0.006),'fdom':(0.5,4.5),
@@ -144,6 +223,9 @@ ranges = {
 'up':(-0.4, 0.4),'east':(-0.4, 0.4),'north':(-0.4, 0.4)
 }
 
+
+
+# Not verified against sp_sensorkeys
 standard_deviations = {
 'conductivity':(0.1, 0.6),'density':(0., .3),'pressure':(0.,10.),'salinity':(.0, .4),'temp':(.0, .7),
 'chlora':(0.0, 0.5),'backscatter':(0.0,0.003),'fdom':(0.0,0.7),
@@ -156,6 +238,9 @@ standard_deviations = {
 'up':(0., 0.1),'east':(0, 0.1),'north':(0., 0.1)
 }
 
+
+# Move this into sp_colors
+# Match to sp_sensorkeys
 colors = {
 'conductivity':'xkcd:maroon','density':'xkcd:brick red','pressure':'xkcd:eggplant','salinity':'cyan','temp':'red',
 'chlora':'green','backscatter':'xkcd:blood orange','fdom':'xkcd:olive drab',
@@ -169,6 +254,8 @@ colors = {
 'up':'red','east':'green','north':'blue'
 }
 
+# Realign
+# Match to sp_sensorkeys
 sensor_names = {
 'conductivity':'Conductivity','density':'Density (kg m-3)','pressure':'Pressure',
 'salinity':'Salinity','temp':'Temperature (deg C)',
@@ -266,4 +353,4 @@ if __name__ == '__main__':
     The shallowprofiler module is code specific to the three shallow profilers associated with CEA + RCA.
     This code tests the intrinsic functions etcetera.
     '''
-    print(sensors[0])
+    print(sp_sensorkeys[0])
